@@ -10,6 +10,8 @@ end
 
 desc "Install scripts to your scripts folder"
 task :install => :compile do
+  puts "Making ~/Library/Scripts if it doesn't already exist"
+  system "mkdir -p ~/Library/Scripts"
   puts "Copying scripts to your scripts folder"
   system "cp *.scpt ~/Library/Scripts"
   puts "Done"
